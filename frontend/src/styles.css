@@ -1,0 +1,155 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.parallax {
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  will-change: transform;
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  will-change: transform;
+}
+
+/* Glowing text effect */
+.text-glow {
+  text-shadow: 0 0 10px rgba(125, 249, 255, 0.7),
+               0 0 20px rgba(125, 249, 255, 0.5);
+}
+
+.text-glow-accent {
+  text-shadow: 0 0 10px rgba(255, 16, 240, 0.7),
+               0 0 20px rgba(255, 16, 240, 0.5);
+}
+
+/* Water animation */
+@keyframes water-flow {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(-2%) translateY(1%);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+.water-animation {
+  animation: water-flow 8s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.floating {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Typewriter effect */
+.typewriter {
+  overflow: hidden;
+  border-right: 0.15em solid #7DF9FF;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.1em;
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #7DF9FF }
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Chat bubble animations */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message-animation {
+  animation: fade-in-up 0.4s ease-out forwards;
+}
+
+/* Blur effect for backdrop */
+.backdrop-blur {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(31, 31, 40, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(125, 249, 255, 0.5);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(125, 249, 255, 0.8);
+}
