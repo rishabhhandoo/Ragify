@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# backend files
+backend/chatenv
+*__pycache__
+*.json
+*.pdf
